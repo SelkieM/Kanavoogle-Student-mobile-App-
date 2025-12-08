@@ -2414,7 +2414,7 @@ __metadata:
     "@react-navigation/devtools": "npm:~6.0.27"
     "@react-navigation/native": "npm:~6.0.16"
     "@react-navigation/stack": "npm:~6.3.29"
-    "@sd-jwt/jwt-status-list": "npm:^0.17.0"
+    "@sd-jwt/jwt-status-list": "npm:^0.17.1"
     "@testing-library/jest-native": "npm:~5.4.3"
     "@testing-library/react-native": "npm:~12.3.3"
     "@types/base-64": "npm:^1.0.2"
@@ -6052,14 +6052,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sd-jwt/jwt-status-list@npm:^0.17.0":
-  version: 0.17.0
-  resolution: "@sd-jwt/jwt-status-list@npm:0.17.0"
+"@sd-jwt/jwt-status-list@npm:^0.17.1":
+  version: 0.17.1
+  resolution: "@sd-jwt/jwt-status-list@npm:0.17.1"
   dependencies:
     "@sd-jwt/types": "npm:0.17.0"
     "@sd-jwt/utils": "npm:0.17.0"
     pako: "npm:^2.1.0"
-  checksum: 10c0/bb1a7b2cb74a77223b1c78976d2810b15f02044a11b2b6c4c8ee40b3a5c1618be30ee6b6d5d37ea79eec2850cf50fdffe2f6c1f8ccb8ba225ef2ba4c232b64a2
+  checksum: 10c0/8bf7bb97ddb0da99948ad5d12a472b7eea65bd17715348c9e017a65cfd3e60870eb005f2e1d85558353d7c6c6aba67bba5e766d875783b20eff6fa1602b9ace9
   languageName: node
   linkType: hard
 
@@ -8915,7 +8915,7 @@ __metadata:
     "@react-navigation/devtools": "npm:~6.0.27"
     "@react-navigation/native": "npm:~6.0.16"
     "@react-navigation/stack": "npm:~6.3.29"
-    "@sd-jwt/jwt-status-list": "npm:^0.17.0"
+    "@sd-jwt/jwt-status-list": "npm:^0.17.1"
     "@types/lodash.flatten": "npm:~4.4.9"
     "@types/lodash.merge": "npm:~4.6.9"
     "@types/lodash.startcase": "npm:~4.4.9"
