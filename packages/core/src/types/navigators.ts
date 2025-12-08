@@ -1,6 +1,7 @@
 import { MdocRecord, SdJwtVcRecord, W3cCredentialRecord } from '@credo-ts/core'
 import { NavigatorScreenParams } from '@react-navigation/native'
 import { StackNavigationOptions } from '@react-navigation/stack'
+
 import { OpenId4VPRequestRecord, OpenIDCredentialType } from '../modules/openid/types'
 import { LayoutProps } from '../layout/ScreenLayout'
 
@@ -62,6 +63,10 @@ export enum Screens {
   AutoLock = 'AutoLock',
   UpdateAvailable = 'Update Available',
   ConfigureMediator = 'Configure Mediator',
+
+  // Kanavoogle additions
+  Awards = 'Awards',
+  Leaderboard = 'Leaderboard',
 }
 
 export enum Stacks {
@@ -133,7 +138,10 @@ export type ContactStackParams = {
 
 export type ProofRequestsStackParams = {
   [Screens.ProofRequests]: { connectionId?: string }
-  [Screens.ProofRequesting]: { templateId: string; predicateValues?: Record<string, Record<string, number>> }
+  [Screens.ProofRequesting]: {
+    templateId: string
+    predicateValues?: Record<string, Record<string, number>>
+  }
   [Screens.ProofDetails]: { recordId: string; isHistory?: boolean; senderReview?: boolean }
   [Screens.ProofRequestDetails]: { templateId: string; connectionId?: string }
   [Screens.MobileVerifierLoading]: { proofId: string; connectionId: string }
@@ -178,6 +186,10 @@ export type SettingStackParams = {
   [Screens.HistorySettings]: undefined
   [Screens.AutoLock]: undefined
   [Screens.ConfigureMediator]: { scannedMediatorUri: string } | undefined
+
+  // Kanavoogle screens
+  [Screens.Awards]: undefined
+  [Screens.Leaderboard]: undefined
 }
 
 export type NotificationStackParams = {

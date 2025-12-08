@@ -1,5 +1,5 @@
-import { createStackNavigator } from '@react-navigation/stack'
 import React from 'react'
+import { createStackNavigator } from '@react-navigation/stack'
 import { useTranslation } from 'react-i18next'
 
 import { useTheme } from '../contexts/theme'
@@ -19,6 +19,10 @@ import PINChangeSuccessScreen from '../screens/PINChangeSuccess'
 import { Screens, SettingStackParams } from '../types/navigators'
 import { testIdWithKey } from '../utils/testable'
 
+// Kanavoogle screens
+import AwardsScreen from '../screens/kanavoogle/AwardsScreen'
+import LeaderboardScreen from '../screens/kanavoogle/LeaderboardScreen'
+
 import { useDefaultStackOptions } from './defaultStackOptions'
 import { TOKENS, useServices } from '../container-api'
 
@@ -26,6 +30,7 @@ const SettingStack: React.FC = () => {
   const Stack = createStackNavigator<SettingStackParams>()
   const theme = useTheme()
   const { t } = useTranslation()
+
   const [pages, { screen: terms }, ToggleBiometry, developer, ScreenOptionsDictionary] = useServices([
     TOKENS.SCREEN_ONBOARDING_PAGES,
     TOKENS.SCREEN_TERMS,
@@ -33,6 +38,7 @@ const SettingStack: React.FC = () => {
     TOKENS.SCREEN_DEVELOPER,
     TOKENS.OBJECT_SCREEN_CONFIG,
   ])
+
   const defaultStackOptions = useDefaultStackOptions(theme)
   const OnboardingTheme = theme.OnboardingTheme
   const carousel = createCarouselStyle(OnboardingTheme)
@@ -48,6 +54,7 @@ const SettingStack: React.FC = () => {
           ...ScreenOptionsDictionary[Screens.Settings],
         }}
       />
+
       <Stack.Screen
         name={Screens.RenameWallet}
         component={RenameWallet}
@@ -57,6 +64,7 @@ const SettingStack: React.FC = () => {
           ...ScreenOptionsDictionary[Screens.RenameWallet],
         }}
       />
+
       <Stack.Screen
         name={Screens.Language}
         component={Language}
@@ -66,6 +74,7 @@ const SettingStack: React.FC = () => {
           ...ScreenOptionsDictionary[Screens.Language],
         }}
       />
+
       <Stack.Screen
         name={Screens.ConfigureMediator}
         component={ConfigureMediator}
@@ -75,6 +84,7 @@ const SettingStack: React.FC = () => {
           ...ScreenOptionsDictionary[Screens.ConfigureMediator],
         }}
       />
+
       <Stack.Screen
         name={Screens.AutoLock}
         component={AutoLock}
@@ -84,6 +94,7 @@ const SettingStack: React.FC = () => {
           ...ScreenOptionsDictionary[Screens.AutoLock],
         }}
       />
+
       <Stack.Screen
         name={Screens.DataRetention}
         component={DataRetention}
@@ -93,6 +104,7 @@ const SettingStack: React.FC = () => {
           ...ScreenOptionsDictionary[Screens.DataRetention],
         }}
       />
+
       <Stack.Screen
         name={Screens.Tours}
         component={Tours}
@@ -102,6 +114,7 @@ const SettingStack: React.FC = () => {
           ...ScreenOptionsDictionary[Screens.Tours],
         }}
       />
+
       <Stack.Screen
         name={Screens.ToggleBiometry}
         component={ToggleBiometry}
@@ -111,6 +124,7 @@ const SettingStack: React.FC = () => {
           ...ScreenOptionsDictionary[Screens.ToggleBiometry],
         }}
       />
+
       <Stack.Screen
         name={Screens.ChangePIN}
         component={PINChange}
@@ -120,6 +134,7 @@ const SettingStack: React.FC = () => {
           ...ScreenOptionsDictionary[Screens.ChangePIN],
         }}
       />
+
       <Stack.Screen
         name={Screens.ChangePINSuccess}
         component={PINChangeSuccessScreen}
@@ -130,6 +145,7 @@ const SettingStack: React.FC = () => {
           ...ScreenOptionsDictionary[Screens.ChangePINSuccess],
         }}
       />
+
       <Stack.Screen
         name={Screens.TogglePushNotifications}
         component={TogglePushNotifications}
@@ -139,6 +155,7 @@ const SettingStack: React.FC = () => {
           ...ScreenOptionsDictionary[Screens.TogglePushNotifications],
         }}
       />
+
       <Stack.Screen
         name={Screens.Terms}
         component={terms}
@@ -148,6 +165,7 @@ const SettingStack: React.FC = () => {
           ...ScreenOptionsDictionary[Screens.Terms],
         }}
       />
+
       <Stack.Screen
         name={Screens.Developer}
         component={developer}
@@ -157,7 +175,15 @@ const SettingStack: React.FC = () => {
           ...ScreenOptionsDictionary[Screens.Developer],
         }}
       />
-      <Stack.Screen name={Screens.Onboarding} options={{ title: t('Screens.Onboarding') }}>
+
+      <Stack.Screen
+        name={Screens.Onboarding}
+        options={{
+          title: t('Screens.Onboarding'),
+          headerBackTestID: testIdWithKey('Back'),
+          ...ScreenOptionsDictionary[Screens.Onboarding],
+        }}
+      >
         {(props) => (
           <Onboarding
             {...props}
@@ -169,6 +195,7 @@ const SettingStack: React.FC = () => {
           />
         )}
       </Stack.Screen>
+
       <Stack.Screen
         name={Screens.HistorySettings}
         component={HistorySettings}
@@ -176,6 +203,27 @@ const SettingStack: React.FC = () => {
           title: t('Screens.HistorySettings'),
           headerBackTestID: testIdWithKey('Back'),
           ...ScreenOptionsDictionary[Screens.HistorySettings],
+        }}
+      />
+
+      {/* Kanavoogle screens */}
+      <Stack.Screen
+        name={Screens.Awards}
+        component={AwardsScreen}
+        options={{
+          title: t('Screens.Awards'),
+          headerBackTestID: testIdWithKey('Back'),
+          ...ScreenOptionsDictionary[Screens.Awards],
+        }}
+      />
+
+      <Stack.Screen
+        name={Screens.Leaderboard}
+        component={LeaderboardScreen}
+        options={{
+          title: t('Screens.Leaderboard'),
+          headerBackTestID: testIdWithKey('Back'),
+          ...ScreenOptionsDictionary[Screens.Leaderboard],
         }}
       />
     </Stack.Navigator>

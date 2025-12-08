@@ -154,6 +154,18 @@ const Settings: React.FC<SettingsProps> = ({ navigation }) => {
           testID: testIdWithKey('Lockout'),
           onPress: () => navigation.navigate(Screens.AutoLock),
         },
+        {
+          title: 'Awards',
+          accessibilityLabel: 'Awards',
+          testID: testIdWithKey('Awards'),
+          onPress: () => navigation.navigate(Screens.Awards),
+        },
+        {
+          title: 'Leaderboard',
+          accessibilityLabel: 'Leaderboard',
+          testID: testIdWithKey('Leaderboard'),
+          onPress: () => navigation.navigate(Screens.Leaderboard),
+        },
       ],
     },
     ...(settings || []),
