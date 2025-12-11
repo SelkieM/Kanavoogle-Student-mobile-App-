@@ -211,7 +211,7 @@ const SettingStack: React.FC = () => {
         name={Screens.Awards}
         component={AwardsScreen}
         options={{
-          title: t('Screens.Awards'),
+          title: 'Awards',
           headerBackTestID: testIdWithKey('Back'),
           ...ScreenOptionsDictionary[Screens.Awards],
         }}
@@ -221,7 +221,7 @@ const SettingStack: React.FC = () => {
         name={Screens.Leaderboard}
         component={LeaderboardScreen}
         options={{
-          title: t('Screens.Leaderboard'),
+          title:'Leaderboard',
           headerBackTestID: testIdWithKey('Back'),
           ...ScreenOptionsDictionary[Screens.Leaderboard],
         }}

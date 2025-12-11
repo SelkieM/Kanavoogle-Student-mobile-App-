@@ -85,6 +85,18 @@ exports[`Settings Screen Renders correctly 1`] = `
               "value": "5 min",
             },
             Object {
+              "accessibilityLabel": "Awards",
+              "onPress": [Function],
+              "testID": "com.ariesbifold:id/Awards",
+              "title": "Awards",
+            },
+            Object {
+              "accessibilityLabel": "Leaderboard",
+              "onPress": [Function],
+              "testID": "com.ariesbifold:id/Leaderboard",
+              "title": "Leaderboard",
+            },
+            Object {
               "accessibilityLabel": "Settings.Developer",
               "onPress": [Function],
               "testID": "com.ariesbifold:id/DeveloperOptions",
@@ -1102,7 +1114,7 @@ exports[`Settings Screen Renders correctly 1`] = `
           >
             <View>
               <View
-                accessibilityLabel="Settings.Developer"
+                accessibilityLabel="Awards"
                 accessibilityRole="button"
                 accessibilityState={
                   Object {
@@ -1141,7 +1153,7 @@ exports[`Settings Screen Renders correctly 1`] = `
                     "paddingHorizontal": 25,
                   }
                 }
-                testID="com.ariesbifold:id/DeveloperOptions"
+                testID="com.ariesbifold:id/Awards"
               >
                 <Text
                   maxFontSizeMultiplier={2}
@@ -1166,7 +1178,7 @@ exports[`Settings Screen Renders correctly 1`] = `
                     ]
                   }
                 >
-                  Settings.Developer
+                  Awards
                 </Text>
                 <Text
                   maxFontSizeMultiplier={2}

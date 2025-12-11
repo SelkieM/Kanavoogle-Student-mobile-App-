@@ -83,35 +83,37 @@ describe('Settings Screen', () => {
     expect(walletName).not.toBeNull()
   })
 
-  test('If developer mode is enabled, developer mode button is shown', async () => {
-    const customState = {
-      ...testDefaultState,
-      preferences: {
-        ...testDefaultState.preferences,
-        developerModeEnabled: true,
-        walletName: 'My Wallet',
-      },
-    }
-    const tree = render(
-      <StoreContext.Provider
-        value={[
-          customState,
-          () => {
-            return
-          },
-        ]}
-      >
-        <BasicAppContext>
-          <AuthContext.Provider value={authContext}>
-            <Settings navigation={useNavigation()} route={{} as any} />
-          </AuthContext.Provider>
-        </BasicAppContext>
-      </StoreContext.Provider>
-    )
+  test('Awards button is visible in settings', async () => {
+  const customState = {
+    ...testDefaultState,
+    preferences: {
+      ...testDefaultState.preferences,
+      developerModeEnabled: true,
+      walletName: 'My Wallet',
+    },
+  }
 
-    const developerModeButton = tree.getByTestId(testIdWithKey('DeveloperOptions'))
-    expect(developerModeButton).not.toBeNull()
-  })
+  const tree = render(
+    <StoreContext.Provider
+      value={[
+        customState,
+        () => {
+          return
+        },
+      ]}
+    >
+      <BasicAppContext>
+        <AuthContext.Provider value={authContext}>
+          <Settings navigation={useNavigation()} route={{} as any} />
+        </AuthContext.Provider>
+      </BasicAppContext>
+    </StoreContext.Provider>
+  )
+
+  const awardsButton = tree.getByTestId(testIdWithKey('Awards'))
+  expect(awardsButton).not.toBeNull()
+})
+
 
   test('If mobile verifier is enabled, verifier options are shown', async () => {
     const customState = {

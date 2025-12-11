@@ -45,3 +45,22 @@ beforeAll(() => {
 afterAll(() => {
   if (dateNowSpy) dateNowSpy.mockRestore()
 })
+
+
+
+// ---- Mock react-native-webview for Jest ----
+jest.mock('react-native-webview', () => {
+  const React = require('react')
+  const { View } = require('react-native')
+
+  const WebView = React.forwardRef((props, ref) =>
+    React.createElement(View, { ref, ...props })
+  )
+
+  return {
+    __esModule: true,
+    default: WebView,
+    WebView, // support `import { WebView }` as well
+  }
+})
+
