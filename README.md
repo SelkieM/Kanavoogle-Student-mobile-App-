@@ -1,3 +1,26 @@
+# Kanavoogle Student Wallet (Bifold-based)
+
+This repository is a Kanavoogle-themed build of the OpenWallet Foundation’s **Bifold** mobile wallet. It extends the upstream React Native wallet to support the Kanavoogle SSI stack by (1) connecting to the **Kanavoogle Hyperledger Indy ledger** via a custom genesis configuration and (2) exposing two additional student-facing UI surfaces: **Awards** and **Leaderboard**.
+
+## What we changed (high level)
+
+### 1) Kanavoogle Indy ledger connectivity (genesis)
+Bifold’s Indy ledger configuration was updated to include the **Kanavoogle genesis transactions** and namespace. This allows the wallet (through Credo / AnonCreds + Indy plumbing) to resolve Kanavoogle schemas, credential definitions, and revocation registries from the Kanavoogle network, rather than using the default development ledgers.
+
+### 2) Added two student screens: Awards + Leaderboard
+Two new navigation routes were added to the mobile app:
+
+- **Awards:** a student-facing view of earned achievements intended to align with the Kanavoogle teacher web app’s awards model. Awards are designed to be issued as **verifiable credentials** so students can later present them to third parties (e.g., employers) for cryptographic verification.
+
+- **Leaderboard:** a student engagement surface intended to reflect the Kanavoogle gamification system. Leaderboard state is computed in the web tier (teacher web app + gamification database) and surfaced in the wallet for visibility and motivation. In the current implementation this is presented as a UI extension intended to evolve into fully dynamic, data-backed views as the gamification backend is integrated.
+
+## Running this Kanavoogle build
+
+Follow the upstream setup instructions below for installing dependencies and building Bifold. In addition, ensure the Kanavoogle ledger configuration is present in the Indy ledger config (genesis + namespace). If you are using a mediator, set `MEDIATOR_URL` in `samples/app/.env` as described in the upstream README.
+
+> Upstream Bifold documentation starts below. The Developers Guide and build steps remain unchanged unless noted.
+
+
 # Bifold README.md
 
 # Summary
